@@ -3,9 +3,12 @@ import './App.css';
 import React from 'react';
 import Input from './components/input';
 import { useState, useEffect } from 'react'
+import Result from './components/result';
 
 function App() {
-  const [weather, setWeather] = useState('cloud')
+  const [weather, setWeather] = useState('20 c')
+  const [h, setH] = useState('night')
+  const [icon, setIcon] = useState('01d')
   function newWeather( w ){
     if(!!w){
       setWeather(w)
@@ -20,7 +23,10 @@ function App() {
     const data0 = await all.json()
     await console.log(data0);
     await setWeather('error')
-    await newWeather(data0.weather[0].main);
+    await setWeather(`${data0.main.temp} c`)
+    await setIcon(`${data0.weather[0].icon}`);
+    const hour = await new Date().getHours()
+    await hour > 6 && hour < 18? setH('day') : setH('night')
   }
   function submit(evt) {
     evt.preventDefault()
@@ -30,8 +36,11 @@ function App() {
 }
   return (
     <div className="App">
-      <Input getWeather={submit} ></Input>
-      <h1>{weather}</h1>
+      <div className='blur'>
+        <Input getWeather={submit} ></Input>
+        <Result ico={icon}></Result>
+      </div>
+      <img className="backGround" src={`bg/${h}.jpg`}></img>
     </div>
   );
 }
