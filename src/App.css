@@ -1,20 +1,15 @@
 .App {
   width: 100vw;
   height: 100vh;
-}
-.backGround{
-  position: fixed;
-  width: 100vw;
-  z-index: -10;
-  bottom: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .blur{
   position: fixed;
-  width: 50vw;
-  height: 65vh;
-  backdrop-filter: blur(10px);
-  background-color: rgba(48, 48, 48, 0.26);
-  border: 2px solid rgb(255, 255, 255);
+  width: 500px;
+  height: 400px;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.568);
   border-radius: 50px;
   left: 50%;
   top: 50%;

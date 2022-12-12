@@ -1,10 +1,11 @@
 import React from "react";
-function Result( props ) {
-    console.log(props)
+function Result( {icon, weather, city} ) {
+    console.log(icon)
     return (
         <div>
-            <h1>hola</h1>
-            <img src={`icons/${props.ico}.svg`}/>
+            <h1>{city}</h1>
+            <h1>{weather}</h1>
+            <img src={`icons/${icon}.svg`}/>
         </div>
     );
   }
