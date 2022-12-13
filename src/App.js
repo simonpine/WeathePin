@@ -52,24 +52,23 @@ function App() {
     })
   }
   function color( color1, color2 ){
+      const colorForAllJASON = JSON.stringify(color1)
+      localStorage.setItem('getColor', colorForAllJASON)
+      const colorForAll2JASON = JSON.stringify(color2)
+      localStorage.setItem('getColor2', colorForAll2JASON)
+    setColorForAll(JSON.parse(localStorage.getItem('getColor')))
+    setColorForAll2(JSON.parse(localStorage.getItem('getColor2')))
+  }
+  useEffect(()=>{
     if(localStorage.length == 0){
       const colorForAllJASON = JSON.stringify(colorForAll)
       localStorage.setItem('getColor', colorForAllJASON)
       const colorForAll2JASON = JSON.stringify(colorForAll2)
       localStorage.setItem('getColor2', colorForAll2JASON)
     }
-    else{
-      const colorForAllJASON = JSON.stringify(color1)
-      localStorage.setItem('getColor', colorForAllJASON)
-      const colorForAll2JASON = JSON.stringify(color2)
-      localStorage.setItem('getColor2', colorForAll2JASON)
-    }
     setColorForAll(JSON.parse(localStorage.getItem('getColor')))
     setColorForAll2(JSON.parse(localStorage.getItem('getColor2')))
-  }
-  useEffect(()=>{
-    setColorForAll(JSON.parse(localStorage.getItem('getColor')))
-    setColorForAll2(JSON.parse(localStorage.getItem('getColor2')))
+
   }, [])
   return (
     <div className="App" style={styApp}>
