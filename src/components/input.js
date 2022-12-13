@@ -1,5 +1,5 @@
 import React from "react";
-function Input( {getWeather, setUnits, setUnits2, colorForAll, colorForAll2, color} ) {
+function Input( {getWeather, setUnits, setUnits2, setUnits3, colorForAll, colorForAll2, color} ) {
 
     return (
         <form style={colorForAll2} className="search" onSubmit={getWeather}>
@@ -8,10 +8,12 @@ function Input( {getWeather, setUnits, setUnits2, colorForAll, colorForAll2, col
             <button className="searchButton" onClick={()=>{ 
                 setUnits('imperial') 
                 setUnits2('F')
+                setUnits3('mph')
                 }} type="submit" value='search'>°F</button>
             <button className="searchButton" onClick={()=>{ 
                 setUnits('metric') 
                 setUnits2('C') 
+                setUnits3('km/h')
                 }} type="submit" value='search'>°C</button>
             <button className="searchButton" onClick={()=>{ 
                 if(colorForAll.backgroundColor === 'rgba(0, 0, 0, 0.568)'){

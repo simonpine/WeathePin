@@ -14,6 +14,7 @@ function App() {
   })
   const [units, setUnits] = useState('metric')
   const [units2, setUnits2] = useState('C')
+  const [units3, setUnits3] = useState('km/h')
   const [city, setCity] = useState('New York')
   const [temp, setTemp] = useState('20°C')
   const [humi, setHumi] = useState('20%')
@@ -44,7 +45,7 @@ function App() {
         setIcon(`${span.weather[0].icon}`);
         setWeather(`${span.weather[0].description}`)
         setHumi(`${span.main.humidity}%`)
-        setSp(`${span.wind.speed} km/h`)
+        setSp(`${span.wind.speed} ${units3}`)
         setCity(span.name)
         const city2 = city.replace(' ', '-')
         setBgImgn(city2)
@@ -73,7 +74,7 @@ function App() {
   return (
     <div className="App" style={styApp}>
       <div className='blur' style={colorForAll}>
-        <Input getWeather={submit} setUnits={setUnits} setUnits2={setUnits2} colorForAll={colorForAll} setColorForAll={setColorForAll} color={color} colorForAll2={colorForAll2}></Input>
+        <Input getWeather={submit} setUnits={setUnits} setUnits2={setUnits2} setUnits3={setUnits3} colorForAll={colorForAll} setColorForAll={setColorForAll} color={color} colorForAll2={colorForAll2}></Input>
         <Result icon={icon} temp={temp} city={city} weather={weather} humi={humi} windSpeed={windSpeed} colorForAll2={colorForAll2}></Result>
       </div>
     </div>
