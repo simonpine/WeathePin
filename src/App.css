@@ -12,7 +12,7 @@
 .blur{
   position: fixed;
   width: 500px;
-  height: 270px;
+  height: auto;
   backdrop-filter: blur(4px);
   border-radius: 50px;
   left: 50%;
@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 .searchWrite{
-  width: 250px;
+  width: 50%;
   border-radius: 20px;
   border: none;
   background-color: rgba(12, 12, 12, 0.438);
@@ -83,4 +83,18 @@
   font-size: 20px;
   font-weight: 100;
   margin-bottom: 10px;
+}
+.buttons{
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 530px) {
+  .blur{
+    width: 90vw;
+  }
+  .searchButton{
+    margin-bottom: 5px;
+  }
 }
