@@ -1,4 +1,3 @@
-import logo from './img/logo1.svg';
 import './App.css';
 import React from 'react';
 import Input from './components/input';
@@ -40,7 +39,6 @@ function App() {
         console.log('404')
       }
       else{
-        console.log(span);
         setTemp(`${span.main.temp}°${units2}`)
         setIcon(`${span.weather[0].icon}`);
         setWeather(`${span.weather[0].description}`)
